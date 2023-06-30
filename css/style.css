@@ -1,0 +1,91 @@
+body {
+  margin: 0px; /*reseta as margens do body*/
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+ul {
+  margin: 0px;
+  padding: 0px;
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+.header-bg {
+  background-color: #000000;
+}
+
+.header {
+  display: flex; /* Deixa a logo e o menu lado a lado */
+  flex-wrap: wrap; /* Quando chegar no limite da largura minima o menu quebra */
+  gap: 20px;
+  justify-content: space-between; /* Abre um espaço entre eles */
+  align-items: center; /* alinha eles */
+  box-sizing: border-box;
+  padding: 20px;
+  max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.header-menu {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 40px;
+}
+
+.header-menu a {
+  color: #ffffff;
+  padding: 16px 0px; /*Aumenta a área de contato*/
+  display: inline-block; /* Caso o menu quebre para baixo o padding não respeita as margens e um bloco fica em cima do outro */
+  font-size: 18px;
+  position: relative;
+}
+
+/* Cria um sublinhado baixo do menu */
+.header-menu a::after {
+  content: "";
+  display: block;
+  height: 2px;
+  width: 0px; /* inicia com nenhuma largura */
+  background-color: #ffffff;
+  margin-top: 4px;
+  transition: 0.3s; /* cria um efeito do sublinhado */
+  position: absolute; /* Tira o sublinhado do fluxo para a logo manter o alinhamento correto somente com o menu */
+}
+
+.header-menu a:hover::after {
+  width: 100%; /* aumenta a largura do sublinhado em 100% */
+}
+
+@media (max-width: 800px) {
+  .header-menu {
+    gap: 20px;
+  }
+  .header-menu a {
+    background-color: #111111;
+    padding: 12px 16px;
+    border-radius: 4px;
+  }
+
+  .header-menu a:hover {
+    background-color: #2e2e2e;
+  }
+
+  .header a::after {
+    display: none;
+  }
+}
+
+@media (max-width: 600px) {
+  .header-menu {
+    gap: 12px;
+  }
+
+  .header-menu a {
+    padding: 8px 12px;
+    font-size: 14px;
+  }
+}
