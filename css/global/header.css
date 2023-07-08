@@ -37,7 +37,8 @@
   position: absolute; /* Tira o sublinhado do fluxo para a logo manter o alinhamento correto somente com o menu */
 }
 
-.header-menu a:hover::after {
+.header-menu a:hover::after,
+.header-menu a.ativo::after {
   width: 100%; /* aumenta a largura do sublinhado em 100% */
 }
 
